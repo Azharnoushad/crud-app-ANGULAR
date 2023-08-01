@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EditComponent } from './components/employee-add/edit/edit.component';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'crud_app';
+
+  constructor (private _dialog : MatDialog){}
+
+  openEditEmployee () {
+    this._dialog.open(EditComponent, {
+      width: '500px',
+    })
+  }
 }
