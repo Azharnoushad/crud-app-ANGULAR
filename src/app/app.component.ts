@@ -46,8 +46,15 @@ export class AppComponent implements OnInit {
   ) {}
 
   openEditEmployee() {
-    this._dialog.open(EditComponent, {
+    const dialogref = this._dialog.open(EditComponent, {
       width: '500px',
+    });
+    dialogref.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getEmployeeList();
+        }
+      },
     });
   }
 
@@ -70,5 +77,23 @@ export class AppComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+  deleteEmployeeDetails(id: number) {
+    this._employeeService.deleteEmployeeDetails(id).subscribe({
+      next: (res) => {
+        alert('Emplyee deleted');
+        this.getEmployeeList();
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+
+  editEmployee(data: any) {
+    this._dialog.open(EditComponent, {
+      width: '500px',
+      data: data,
+    });
   }
 }

@@ -18,7 +18,7 @@
   },
   "employess": [
     {
-      "firstName": "azhar",
+      "firstName": "azharrrr",
       "lastName": "noushad",
       "email": "azhar@gmail.com",
       "dob": "2023-08-16T18:30:00.000Z",
@@ -28,6 +28,18 @@
       "experience": 3,
       "package": 23,
       "id": 1
+    },
+    {
+      "firstName": "muhammed",
+      "lastName": "azhar",
+      "email": "ruveenakavanat@gmail.com",
+      "dob": "2023-08-08T18:30:00.000Z",
+      "gender": "female",
+      "education": "Diploma",
+      "company": "google",
+      "experience": 23,
+      "package": 2,
+      "id": 2
     }
   ]
 }
